@@ -1,6 +1,6 @@
 version = "v1"
 
 policy "limit_monthly_cost" {
-  enabled           = false
+  enabled           = true
   enforcement_level = "hard-mandatory"
 }
