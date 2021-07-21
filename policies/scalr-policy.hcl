@@ -1,4 +1,4 @@
-version = "v4"
+version = "v5"
 
 policy "limit_monthly_cost" {
   enabled           = true
