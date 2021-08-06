@@ -7,6 +7,18 @@ variable "sleep_time" {
   default = 120
 }
 
+resource "null_resource" "wait" {
+  provisioner "local-exec" {
+    command = <<EOT
+      sleep 120
+    EOT
+  }
+  triggers = {
+    always_run = timestamp()
+  }
+}
+
+
 resource "random_integer" "timeout" {
   min = 31
   max = 180
@@ -16,14 +28,7 @@ resource "random_integer" "timeout" {
   }
 }
 
-resource "null_resource" "wait" {
-  triggers = {
-    run_id = var.run_id
-  }
-  provisioner "local-exec" {
-    command = "env"
-  }
-}
+
 
 
 
