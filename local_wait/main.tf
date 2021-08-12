@@ -4,13 +4,13 @@ variable "run_id" {
 }
 
 variable "sleep_time" {
-  default = 120
+  default = 10 
 }
 
 resource "null_resource" "wait" {
   provisioner "local-exec" {
     command = <<EOT
-      sleep 120
+      sleep 10
     EOT
   }
   triggers = {
