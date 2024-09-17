@@ -13,6 +13,10 @@ data "aws_ami" "ubuntu" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+  variable "reg" {
+  type = string
+}
+
   tag = ["099720109477"]
 }
 resource "aws_instance" "test_instance1" {
