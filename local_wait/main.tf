@@ -5,7 +5,7 @@ variable "run_id" {
  
 variable "sleep_time" {
   default = 120
-}
+} 
 
 resource "null_resource" "wait" {
   provisioner "local-exec" {
